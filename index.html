@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safia Baloch | Homepage</title>
+    <title>Safia Baloch | Academic Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>Safia Baloch</h1>
-        <p>Lecturer | Data Scientist | Software Quality Assurance Professional</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-content">
+            <h1>Safia Baloch</h1>
+            <p>Lecturer | Data Scientist | Software Quality Assurance Professional</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <!-- About Section -->
@@ -24,28 +26,37 @@
         <h2>About Me</h2>
         <div class="about-content">
             <img src="your-photo.jpg" alt="Safia Baloch's Photo">
-            <p>Brief description of your academic background, teaching experience, and research interests.</p>
+            <p>
+                Brief introduction covering your teaching background, research interests, and professional experience.
+                You may include notable achievements, affiliations, and a summary of your expertise.
+            </p>
         </div>
     </section>
 
     <!-- Research Section -->
     <section id="research">
         <h2>Research</h2>
-        <ul>
-            <li><strong>Research Paper 1 Title</strong><br>Authors, Journal, Year. <a href="link-to-paper">Read more</a></li>
-            <li><strong>Research Paper 2 Title</strong><br>Authors, Journal, Year. <a href="link-to-paper">Read more</a></li>
-            <!-- Add more research items as needed -->
-        </ul>
+        <div class="research-item">
+            <p><strong>Research Paper Title 1</strong><br>
+            Co-authors, Journal Name, Year. <a href="link-to-paper">[Link]</a></p>
+        </div>
+        <div class="research-item">
+            <p><strong>Research Paper Title 2</strong><br>
+            Co-authors, Journal Name, Year. <a href="link-to-paper">[Link]</a></p>
+        </div>
+        <!-- Add more research items as needed -->
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-        <ul>
-            <li><strong>Project 1:</strong> Brief description and <a href="link-to-github">GitHub link</a></li>
-            <li><strong>Project 2:</strong> Brief description and <a href="link-to-github">GitHub link</a></li>
-            <!-- Add more projects as needed -->
-        </ul>
+        <div class="project-item">
+            <p><strong>Project 1:</strong> Brief description and <a href="link-to-github">GitHub link</a></p>
+        </div>
+        <div class="project-item">
+            <p><strong>Project 2:</strong> Brief description and <a href="link-to-github">GitHub link</a></p>
+        </div>
+        <!-- Add more projects as needed -->
     </section>
 
     <!-- Contact Section -->
@@ -53,7 +64,7 @@
         <h2>Contact</h2>
         <p>Email: your-email@example.com</p>
         <p>
-            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> | 
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
             <a href="https://github.com/yourusername">GitHub</a>
         </p>
     </footer>
