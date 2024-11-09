@@ -1,62 +1,100 @@
-/* General Styles */
+/* Basic Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
     color: #333;
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    line-height: 1.6;
+    background-color: #f4f4f9;
+    line-height: 1.8;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
+h1, h2 {
+    font-weight: normal;
+    color: #003366;
 }
 
-header h1 {
-    font-size: 2.5em;
-    color: #007acc;
-}
-
-header p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-nav a {
-    margin: 0 15px;
+a {
     color: #007acc;
     text-decoration: none;
 }
 
-section {
-    margin-bottom: 40px;
+a:hover {
+    text-decoration: underline;
 }
 
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+header nav {
+    margin-top: 20px;
+}
+
+header nav a {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Section Styles */
+section {
+    margin: 50px 0;
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* About Section */
 .about-content {
     display: flex;
     align-items: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .about-content img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-right: 20px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Research and Project Items */
+.research-item, .project-item {
+    margin-top: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
 }
 
+.research-item p, .project-item p {
+    margin: 0;
+}
+
+/* Footer / Contact */
 footer {
     text-align: center;
-    font-size: 0.9em;
-    color: #666;
+    padding: 20px 0;
+    color: #555;
+    border-top: 1px solid #ddd;
 }
 
 footer a {
-    color: #007acc;
-    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
 }
