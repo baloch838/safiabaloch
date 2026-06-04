@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safia Baloch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b62;
+      --faint: #e8e6df;
+      --paper: #f7f5ef;
+      --accent: #2d4a3e;
+      --link: #8b4a2f;
+      --mono: 'DM Mono', monospace;
+      --serif: 'EB Garamond', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Nav */
+    nav {
+      padding: 2rem 0 0;
+      margin-bottom: 4rem;
+    }
+    nav .container {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .nav-name {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 5rem;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: start;
+    }
+    .hero-text h1 {
+      font-family: var(--serif);
+      font-size: 2.6rem;
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+    }
+    .hero-tagline {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-bio {
+      font-size: 17px;
+      color: var(--ink);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+    .hero-bio em { font-style: italic; color: var(--accent); }
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(15%) contrast(1.05);
+      flex-shrink: 0;
+      border: 1px solid var(--faint);
+    }
+    .hero-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .hero-links a:hover { border-bottom-color: var(--link); }
+
+    /* Divider */
+    hr.section-rule {
+      border: none;
+      border-top: 1px solid var(--faint);
+      margin: 0 0 3rem;
+    }
+
+    /* Section heading */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    /* Section */
+    section { margin-bottom: 4.5rem; }
+
+    /* Research */
+    .pub-list { list-style: none; }
+    .pub-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--faint);
+    }
+    .pub-item:first-child { border-top: 1px solid var(--faint); }
+    .pub-title {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+      font-style: italic;
+      color: var(--ink);
+    }
+    .pub-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .pub-status {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .pub-status.conference { background: #dde8e4; color: var(--accent); }
+    .pub-status.preprint { background: #ede6da; color: #7a5c34; }
+    .pub-status.prep { background: var(--faint); color: var(--muted); }
+    .pub-links { margin-top: 0.4rem; }
+    .pub-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      margin-right: 1rem;
+    }
+    .pub-links a:hover { border-bottom-color: var(--link); }
+
+    /* Experience */
+    .exp-list { list-style: none; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1rem 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--faint);
+    }
+    .exp-item:first-child { border-top: 1px solid var(--faint); }
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--muted);
+      padding-top: 3px;
+      line-height: 1.5;
+    }
+    .exp-role {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+    .exp-place {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .exp-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .exp-desc li { margin-bottom: 0.2rem; list-style: none; padding-left: 1rem; position: relative; }
+    .exp-desc li::before { content: '—'; position: absolute; left: 0; color: var(--faint); }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .skill-group-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--ink);
+      background: #ece9e0;
+      padding: 3px 10px;
+      border-radius: 2px;
+    }
+
+    /* Contact */
+    .contact-block {
+      font-size: 17px;
+      line-height: 2;
+    }
+    .contact-block a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-block a:hover { border-bottom-color: var(--link); }
+
+    /* Footer */
+    footer {
+      padding: 3rem 0 2.5rem;
+      border-top: 1px solid var(--faint);
+      margin-top: 2rem;
+    }
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    footer p {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero { animation: fadeUp 0.6s ease both; }
+    section { animation: fadeUp 0.6s ease both; }
+    section:nth-of-type(1) { animation-delay: 0.05s; }
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.15s; }
+    section:nth-of-type(4) { animation-delay: 0.2s; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .hero-photo {
+        width: 100px; height: 100px;
+        order: -1;
+      }
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+      .skills-grid { grid-template-columns: 1fr; }
+      body { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="nav-name">Safia Baloch</a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1>Safia Baloch</h1>
+      <p class="hero-tagline">Lecturer · NLP Researcher · Karachi / Swabi, Pakistan</p>
+      <p class="hero-bio">
+        I work on <em>natural language processing</em> and text mining — with a focus on automatic short answer grading, information retrieval, and AI-driven document understanding. Currently a lecturer at GIK Institute, I also research time-series forecasting and agentic AI systems.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:shahalsafia45@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/safia-baloch-1794a260/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/baloch838" target="_blank">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=rFRE574AAAAJ&hl=en" target="_blank">Scholar</a>
+        <a href="https://orcid.org/0009-0000-7587-0818" target="_blank">ORCID</a>
+      </div>
+    </div>
+    <img
+      class="hero-photo"
+      src="https://baloch838.github.io/safiabaloch/img/pic1.jpg"
+      alt="Safia Baloch"
+      onerror="this.style.display='none'"
+    />
+  </div>
+</div>
+
+<main>
+  <div class="container">
+
+    <!-- Research -->
+    <section id="research">
+      <p class="section-label">Publications</p>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <p class="pub-title">Governed by Agents: A Survey on the Role of Agentic AI in Future Computing Environments</p>
+          <p class="pub-meta">
+            Nauman Ali Murad, Safia Baloch
+            <span class="pub-status preprint">arXiv preprint</span>
+          </p>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2509.16676" target="_blank">arXiv:2509.16676 ↗</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <p class="pub-title">Forecasting the Stability of COVID-19 Vaccine Companies Stock Market using LSTM and Time-Series Models</p>
+          <p class="pub-meta">
+            Rahemeen Khan, Safia Baloch
+            <span class="pub-status conference">C-CODE / ICCDS 2023</span>
+          </p>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/10139884/" target="_blank">IEEE ↗</a>
+          </div>
+        </li>
+
+        <li class="pub-item">
+          <p class="pub-title">Comprehensive Text Mining on the AG News Dataset: A Comparative Study of Supervised Classification and Unsupervised Topic Modelling</p>
+          <p class="pub-meta">
+            Safia Baloch et al.
+            <span class="pub-status prep">In Preparation</span>
+          </p>
+        </li>
+
+        <li class="pub-item">
+          <p class="pub-title">Stock in Sight: Comprehensive Evaluation of Financial Stock Predictions</p>
+          <p class="pub-meta">
+            Safia Baloch et al.
+            <span class="pub-status prep">In Preparation</span>
+          </p>
+        </li>
+
+      </ul>
+    </section>
+
+    <hr class="section-rule" />
+
+    <!-- Experience -->
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <ul class="exp-list">
+
+        <li class="exp-item">
+          <div class="exp-period">Oct 2024 – Present</div>
+          <div>
+            <p class="exp-role">Lecturer</p>
+            <p class="exp-place">GIK Institute of Engineering Sciences and Technology, Swabi</p>
+            <ul class="exp-desc">
+              <li>Teaching Data Science, Cloud Computing, Information Retrieval, and Big Data Analytics</li>
+              <li>Coordinator of Data Science Students Summer Internships</li>
+              <li>Supervising FYP projects including Health Atlas (AI-driven prescription digitization)</li>
+              <li>Instructor, ML to LLM Summer Bootcamp (Jul–Aug 2025)</li>
+              <li>Outstanding Instructor Award, May 2025</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="exp-item">
+          <div class="exp-period">Jan 2021 – Sep 2024</div>
+          <div>
+            <p class="exp-role">Lecturer</p>
+            <p class="exp-place">FAST NUCES, Karachi</p>
+            <ul class="exp-desc">
+              <li>Taught Operating Systems, Data Structures, Parallel Distributed Computing</li>
+              <li>Faculty Head, ACM Chapter (2021–22) and ACM-Women Chapter (2022–23)</li>
+              <li>Supervised projects on ML, NLP, and virtual therapy</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="exp-item">
+          <div class="exp-period">Aug 2017 – Dec 2020</div>
+          <div>
+            <p class="exp-role">Instructor</p>
+            <p class="exp-place">FAST NUCES, Karachi</p>
+            <ul class="exp-desc">
+              <li>Delivered labs for Programming Fundamentals, Data Structures, OS, and ICT Tools</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="exp-item">
+          <div class="exp-period">Oct 2016 – Jun 2017</div>
+          <div>
+            <p class="exp-role">SQA Engineer</p>
+            <p class="exp-place">Ovrlod Pvt Ltd, Karachi</p>
+            <ul class="exp-desc">
+              <li>Software quality assurance for product releases</li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <hr class="section-rule" />
+
+    <!-- Education (compact) -->
+    <section id="education">
+      <p class="section-label">Education</p>
+      <ul class="exp-list">
+
+        <li class="exp-item">
+          <div class="exp-period">2017 – 2020</div>
+          <div>
+            <p class="exp-role">M.S. Computer Science</p>
+            <p class="exp-place">FAST NUCES, Karachi · GPA 3.13/4.0</p>
+            <p class="exp-desc" style="font-size:15px;">Thesis: <em>Automatic Grading of Short Answers using Text Similarity Techniques</em></p>
+          </div>
+        </li>
+
+        <li class="exp-item">
+          <div class="exp-period">2012 – 2016</div>
+          <div>
+            <p class="exp-role">B.S. Computer Science</p>
+            <p class="exp-place">FAST NUCES, Karachi · Sindh Endowment Scholar</p>
+            <p class="exp-desc" style="font-size:15px;">FYP: <em>HuMa — Platform for Human-Machine Computations</em></p>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <hr class="section-rule" />
+
+    <!-- Skills -->
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+
+        <div>
+          <p class="skill-group-label">Languages</p>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Shell</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-group-label">ML / AI</p>
+          <div class="skill-tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">HuggingFace</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">AutoGen</span>
+            <span class="tag">scikit-learn</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-group-label">Cloud & Data</p>
+          <div class="skill-tags">
+            <span class="tag">AWS</span>
+            <span class="tag">GCP</span>
+            <span class="tag">BigQuery</span>
+            <span class="tag">Spark</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="skill-group-label">Other</p>
+          <div class="skill-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Flask</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">Terraform</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="section-rule" />
+
+    <!-- Contact -->
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <div class="contact-block">
+        <a href="mailto:shahalsafia45@gmail.com">shahalsafia45@gmail.com</a><br />
+        <a href="https://www.linkedin.com/in/safia-baloch-1794a260/" target="_blank">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/baloch838" target="_blank">GitHub</a>
+        &nbsp;·&nbsp;
+        <a href="https://scholar.google.com/citations?user=rFRE574AAAAJ&hl=en" target="_blank">Google Scholar</a>
+        &nbsp;·&nbsp;
+        <a href="https://orcid.org/0009-0000-7587-0818" target="_blank">ORCID</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Safia Baloch · GIK Institute, Swabi</p>
+    <p>Updated 2025</p>
+  </div>
+</footer>
+
+</body>
+</html>
