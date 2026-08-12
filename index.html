@@ -80,15 +80,13 @@
 
     /* Page layout */
     .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 2rem;
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
+  width: min(1400px, 95%);
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+}
     /* Sidebar */
     .sidebar {
       position: sticky;
@@ -358,9 +356,43 @@
       border-top: 1px solid var(--faint);
       margin-top: 1rem;
     }
+.hobbies-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1rem;
+  margin-top:1.5rem;
+}
 
+.hobby-card{
+  background:white;
+  border:1px solid var(--faint);
+  border-radius:10px;
+  padding:1.2rem;
+  text-align:center;
+  transition:0.3s;
+}
+
+.hobby-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.hobby-icon{
+  font-size:2rem;
+  margin-bottom:.5rem;
+}
+
+.hobby-title{
+  font-weight:600;
+  margin-bottom:.4rem;
+}
+
+.hobby-text{
+  font-size:13px;
+  color:var(--muted);
+}
     /* Mobile */
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .page {
         grid-template-columns: 1fr;
         padding: 1.5rem 1rem;
@@ -734,39 +766,72 @@
     </div>
 
     <!-- Hobbies & Travel -->
-    <div class="section" id="hobbies">
-      <p class="section-title">Hobbies & Travel</p>
-      <p class="travel-intro">I'm a genuine admirer of nature — mountains with their peaks brushing the clouds, winding rivers, cold mountain air, and wide open skies never fail to stop me in my tracks. Wherever I travel, I find myself chasing that same sense of vastness, whether it's in the mountains, the fields, or the sky.</p>
+    <p class="travel-intro">
+I enjoy exploring mountains, rivers, valleys and historical places.
+Travel helps me reconnect with nature and discover new cultures, ideas
+and perspectives.
+</p>
 
-      <div class="travel-grid">
-        <div class="travel-item">
-          <img src="img/travel-1.jpg" alt="Watching the sunset light up snow-capped peaks" loading="lazy" />
-          <p class="travel-caption">Sunset over the peaks</p>
-        </div>
-        <div class="travel-item">
-          <img src="img/travel-4.jpg" alt="Above the clouds on a misty mountain top" loading="lazy" />
-          <p class="travel-caption">Above the clouds</p>
-        </div>
-        <div class="travel-item">
-          <img src="img/travel-2.jpg" alt="A quiet wooden cabin in the valley" loading="lazy" />
-          <p class="travel-caption">A quiet valley stop</p>
-        </div>
-        <div class="travel-item">
-          <img src="img/travel-3.jpg" alt="On a bridge overlooking a mountain river" loading="lazy" />
-          <p class="travel-caption">River crossing</p>
-        </div>
-      </div>
+<div class="slider">
+    <div class="slides">
+        avel-1.jpg" alt="Travel Photo 1">
+        <mg/travel/travel-2.jpg
+        3.jpg" alt="Travel Photo 3">
+        img/travel/travel-4.jpg" alt="Travel Photo 4">
+    </div>
+</div>
 
-      <div class="hobby-other">
-        <img class="hobby-photo" src="img/hobby-craft.jpg" alt="Admiring a school art exhibition by young students" loading="lazy" />
-        <div class="hobby-tags">
-          <p class="skill-cat" style="margin-bottom:0.5rem;">Also into</p>
-          <span class="tag">Encouraging Young Creativity</span>
-          <p style="font-size:13px; color: var(--muted); line-height:1.7; margin-top:0.6rem; max-width:480px;">I love appreciating creative arts — especially work by school kids — and finding ways to inspire and encourage young creativity.</p>
+  <div class="hobbies-grid">
+
+    <div class="hobby-card">
+        <div class="hobby-icon">✈️</div>
+        <div class="hobby-title">Travelling</div>
+        <div class="hobby-text">
+            Exploring mountains, valleys and scenic landscapes.
         </div>
-      </div>
     </div>
 
+    <div class="hobby-card">
+        <div class="hobby-icon">📚</div>
+        <div class="hobby-title">Reading</div>
+        <div class="hobby-text">
+            Books on technology, history and personal development.
+        </div>
+    </div>
+
+    <div class="hobby-card">
+        <div class="hobby-icon">🏛️</div>
+        <div class="hobby-title">Historical Visits</div>
+        <div class="hobby-text">
+            Discovering heritage sites, museums and cultural landmarks.
+        </div>
+    </div>
+
+    <div class="hobby-card">
+        <div class="hobby-icon">🌿</div>
+        <div class="hobby-title">Nature</div>
+        <div class="hobby-text">
+            Enjoying mountains, rivers, forests and open skies.
+        </div>
+    </div>
+
+    <div class="hobby-card">
+        <div class="hobby-icon">📸</div>
+        <div class="hobby-title">Photography</div>
+        <div class="hobby-text">
+            Capturing memorable moments during travel and events.
+        </div>
+    </div>
+
+    <div class="hobby-card">
+        <div class="hobby-icon">🎨</div>
+        <div class="hobby-title">Creativity</div>
+        <div class="hobby-text">
+            Encouraging artistic expression and young creative talent.
+        </div>
+    </div>
+
+</div>
     <!-- Contact -->
     <div class="section" id="contact">
       <p class="section-title">Contact</p>
