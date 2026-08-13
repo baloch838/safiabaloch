@@ -1,3 +1,6 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --white: #ffffff;
       --bg: #f8f8f8;
@@ -20,9 +23,9 @@
       --link: #4a7c6f;
       --sans: 'Inter', -apple-system, sans-serif;
     }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       background: var(--bg);
       color: var(--ink);
@@ -30,7 +33,7 @@
       font-size: 15px;
       line-height: 1.7;
     }
-
+ 
     /* Top nav */
     .topnav {
       background: var(--white);
@@ -77,7 +80,7 @@
       color: var(--ink);
       border-bottom-color: var(--accent);
     }
-
+ 
     /* Page layout */
     .page {
       max-width: 1100px;
@@ -88,7 +91,7 @@
       gap: 3rem;
       align-items: start;
     }
-
+ 
     /* Sidebar */
     .sidebar {
       position: sticky;
@@ -151,10 +154,10 @@
       width: 15px;
       flex-shrink: 0;
     }
-
+ 
     /* Main content */
     .main-content {}
-
+ 
     /* Hero intro */
     .intro {
       margin-bottom: 2.5rem;
@@ -176,7 +179,7 @@
     }
     .intro a { color: var(--link); text-decoration: none; }
     .intro a:hover { text-decoration: underline; }
-
+ 
     /* Section */
     .section {
       margin-bottom: 2.5rem;
@@ -192,7 +195,7 @@
       color: var(--muted);
       margin-bottom: 1.25rem;
     }
-
+ 
     /* Publications */
     .pub-list { list-style: none; }
     .pub-item {
@@ -239,7 +242,7 @@
       margin-left: 0.3rem;
     }
     .pub-link:hover { text-decoration: underline; }
-
+ 
     /* Experience */
     .exp-list { list-style: none; }
     .exp-item {
@@ -268,7 +271,7 @@
       margin-bottom: 0.15rem;
     }
     .exp-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
+ 
     /* Skills */
     .skill-row { margin-bottom: 0.75rem; display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
     .skill-cat { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; min-width: 90px; }
@@ -280,13 +283,13 @@
       padding: 2px 9px;
       border-radius: 3px;
     }
-
+ 
     /* Education */
     .edu-item { margin-bottom: 1rem; }
     .edu-degree { font-size: 15px; font-weight: 500; color: var(--ink); }
     .edu-school { font-size: 13px; color: var(--accent); }
     .edu-detail { font-size: 13px; color: var(--muted); font-style: italic; }
-
+ 
     /* Hobbies & Travel */
     .travel-intro {
       font-size: 14px;
@@ -295,7 +298,7 @@
       margin-bottom: 1.5rem;
       max-width: 620px;
     }
-
+ 
     /* Sliding photo gallery */
     .slider-wrap {
       position: relative;
@@ -303,7 +306,7 @@
     }
     .slider-track {
       display: flex;
-      gap: 0px;
+      gap: 10px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
@@ -315,9 +318,9 @@
     .slider-track::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 3px; }
     .slide {
       position: relative;
-      flex: 0 0 100px;
-      width: 100px;
-      height: 4000px;
+      flex: 0 0 auto;
+      width: 250px;
+      height: 310px;
       scroll-snap-align: start;
       border-radius: 4px;
       overflow: hidden;
@@ -361,7 +364,7 @@
     .slider-btn:hover { border-color: var(--accent); color: var(--accent); }
     .slider-btn.prev { left: 8px; }
     .slider-btn.next { right: 8px; }
-
+ 
     /* Flexible hobbies grid */
     .hobby-grid {
       display: grid;
@@ -394,11 +397,7 @@
       color: var(--muted);
       line-height: 1.6;
     }
-.hobby-card-travel { padding: 0.7rem 0.7rem 1.1rem; }
-.hobby-card-travel .slider-wrap { margin-bottom: 0.65rem; }
-.hobby-card-travel .slide { height: 130px; }
-.hobby-card-travel .slider-btn { width: 24px; height: 24px; font-size: 13px; }
-.hobby-card-travel .slide-caption { font-size: 10px; padding: 0.35rem 0.45rem 0.3rem; }
+ 
     /* Footer */
     footer {
       text-align: center;
@@ -408,7 +407,7 @@
       border-top: 1px solid var(--faint);
       margin-top: 1rem;
     }
-
+ 
     /* Mobile */
     @media (max-width: 700px) {
       .page {
@@ -426,12 +425,12 @@
       .sidebar-photo { width: 110px; max-width: 110px; }
       .topnav-links a { padding: 0 0.6rem; font-size: 13px; }
       .topnav-brand { margin-right: 1rem; }
-      .slide { height: 260px; }
+      .slide { width: 190px; height: 240px; }
     }
   </style>
 </head>
 <body>
-
+ 
 <nav class="topnav">
   <div class="topnav-inner">
     <a href="#" class="topnav-brand">Safia Baloch</a>
@@ -447,9 +446,9 @@
     </ul>
   </div>
 </nav>
-
+ 
 <div class="page">
-
+ 
   <!-- Sidebar -->
   <aside class="sidebar">
     <img
@@ -505,10 +504,10 @@
       </ul>
     </div>
   </aside>
-
+ 
   <!-- Main -->
   <main class="main-content">
-
+ 
     <div class="intro">
       <h1>Hello, I'm Safia.</h1>
       <p>
@@ -521,12 +520,12 @@
         I was awarded <strong>Outstanding Instructor</strong> by the Data Science Department at GIKI in May 2025, and I served as an instructor at the ML to LLM Summer Bootcamp in the same year.
       </p>
     </div>
-
+ 
     <!-- Publications -->
     <div class="section" id="research">
       <p class="section-title">Publications</p>
       <ul class="pub-list">
-
+ 
         <li class="pub-item">
           <p class="pub-title">Towards Human-Centered Multi-Agent Systems: Integrating Cognition, Culture, Values and Cooperation in AI Agents</p>
           <p class="pub-authors"><strong>Safia Baloch</strong>, Rahemeen Khan</p>
@@ -534,7 +533,7 @@
           <span class="badge badge-arxiv">arXiv</span>
           <a class="pub-link" href="https://arxiv.org/pdf/2606.08274" target="_blank">[arXiv:2606.08274]</a>
         </li>
-
+ 
         <li class="pub-item">
           <p class="pub-title">Governed by Agents: A Survey on the Role of Agentic AI in Future Computing Environments</p>
           <p class="pub-authors">Nauman Ali Murad, <strong>Safia Baloch</strong></p>
@@ -542,7 +541,7 @@
           <span class="badge badge-arxiv">arXiv</span>
           <a class="pub-link" href="https://arxiv.org/abs/2509.16676" target="_blank">[arXiv:2509.16676]</a>
         </li>
-
+ 
         <li class="pub-item">
           <p class="pub-title">Forecasting the Stability of COVID-19 Vaccine Companies Stock Market using LSTM and Time-Series Models</p>
           <p class="pub-authors">Rahemeen Khan, <strong>Safia Baloch</strong></p>
@@ -550,27 +549,27 @@
           <span class="badge badge-conf">Conference</span>
           <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10139884/" target="_blank">[IEEE]</a>
         </li>
-
+ 
         <li class="pub-item">
           <p class="pub-title">UrduTokBench: A Multidomain Tokenization Benchmark for Urdu NLP</p>
           <p class="pub-authors"><strong>Safia Baloch</strong> et al.</p>
           <span class="badge badge-prep">In Preparation</span>
         </li>
-
+ 
         <li class="pub-item">
           <p class="pub-title">From Labels to Latent Topics: Benchmarking Text Mining Approaches on AG News</p>
           <p class="pub-authors"><strong>Safia Baloch</strong> et al.</p>
           <span class="badge badge-prep">In Preparation</span>
         </li>
-
+ 
       </ul>
     </div>
-
+ 
     <!-- Experience -->
     <div class="section" id="experience">
       <p class="section-title">Experience</p>
       <ul class="exp-list">
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Lecturer</span>
@@ -586,7 +585,7 @@
             <li>Outstanding Instructor Award, May 2025</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Lecturer</span>
@@ -599,7 +598,7 @@
             <li>Supervised research on virtual therapy, ML-based TB detection, resume screening</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Instructor</span>
@@ -610,7 +609,7 @@
             <li>Labs for Programming Fundamentals, Data Structures, Operating Systems, ICT Tools</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">SQA Engineer</span>
@@ -621,15 +620,15 @@
             <li>Software quality assurance for product releases</li>
           </ul>
         </li>
-
+ 
       </ul>
     </div>
-
+ 
     <!-- Projects -->
     <div class="section" id="projects">
       <p class="section-title">Research & Project Supervision</p>
       <ul class="exp-list">
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Health Atlas: AI-Driven Prescription Digitization & Disease Mapping</span>
@@ -638,7 +637,7 @@
             <li>OCR-based digitization of handwritten prescriptions with disease-distribution mapping for public health monitoring</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">IntelliDentX: Automated Dental Lesion Detection and Root Canal Evaluation</span>
@@ -647,7 +646,7 @@
             <li>YOLOv11-based computer vision system for detecting dental lesions and evaluating root canal filling quality</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Stocks in Sight: Stock Market Forecasting Using Time Series Analysis</span>
@@ -656,7 +655,7 @@
             <li>PSX time-series forecasting for market behavior analysis and price prediction</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Tuberculosis Classification Using Machine Learning</span>
@@ -665,7 +664,7 @@
             <li>Multiclass TB classification framework using the ImageCLEF Tuberculosis dataset</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Virtual Therapy for Acrophobia and Claustrophobia</span>
@@ -674,7 +673,7 @@
             <li>Unity-based VR exposure-therapy application for fear of heights and confined spaces</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Automatic Resume Screening and Ranking System</span>
@@ -683,7 +682,7 @@
             <li>ML-based system to extract resume features and rank candidates against job requirements</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Lossless Compression of Vector Databases <span style="font-weight:400; color:var(--muted); font-size:12px;">(CS412 Course Project)</span></span>
@@ -692,7 +691,7 @@
             <li>ANNS, IVF-based retrieval, Product Quantization, and Bolt compression for vector databases</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">Improved Rational Retrieval Acts for Sparse Retrieval Models <span style="font-weight:400; color:var(--muted); font-size:12px;">(Course Project)</span></span>
@@ -701,7 +700,7 @@
             <li>Context-aware retrieval and RSA-based enhancements for sparse retrieval models</li>
           </ul>
         </li>
-
+ 
         <li class="exp-item">
           <div class="exp-header">
             <span class="exp-role">GraphReddit: Social Network Analysis and Community Detection on Reddit <span style="font-weight:400; color:var(--muted); font-size:12px;">(Course Project)</span></span>
@@ -710,31 +709,31 @@
             <li>Neo4j-based interaction networks with PageRank, community detection, and sentiment diffusion analysis</li>
           </ul>
         </li>
-
+ 
       </ul>
     </div>
-
+ 
     <!-- Education -->
     <div class="section" id="education">
       <p class="section-title">Education</p>
-
+ 
       <div class="edu-item">
         <p class="edu-degree">M.S. Computer Science &nbsp;·&nbsp; <span style="font-weight:400">GPA 3.13/4.0</span></p>
         <p class="edu-school">FAST NUCES, Karachi &nbsp;·&nbsp; 2017–2020</p>
         <p class="edu-detail">Thesis: Automatic Grading of Short Answers using Text Similarity Techniques</p>
       </div>
-
+ 
       <div class="edu-item">
         <p class="edu-degree">B.S. Computer Science</p>
         <p class="edu-school">FAST NUCES, Karachi &nbsp;·&nbsp; 2012–2016</p>
         <p class="edu-detail">Sindh Endowment Scholarship · FYP: HuMa — Platform for Human-Machine Computations</p>
       </div>
     </div>
-
+ 
     <!-- Awards & Academic Service -->
     <div class="section" id="awards">
       <p class="section-title">Awards, Honors & Academic Service</p>
-
+ 
       <div class="edu-item">
         <p class="edu-degree">Awards & Honors</p>
         <ul class="exp-bullets" style="margin-top:0.5rem;">
@@ -746,7 +745,7 @@
           <li>Best Performance Award, Secondary School — May 2007</li>
         </ul>
       </div>
-
+ 
       <div class="edu-item" style="margin-top:1.5rem;">
         <p class="edu-degree">Academic Service & Leadership</p>
         <ul class="exp-bullets" style="margin-top:0.5rem;">
@@ -761,7 +760,7 @@
         </ul>
       </div>
     </div>
-
+ 
     <!-- Skills -->
     <div class="section" id="skills">
       <p class="section-title">Technical Skills</p>
@@ -782,26 +781,39 @@
         <span class="tag">Power BI</span><span class="tag">Weka</span><span class="tag">Neo4j</span><span class="tag">Flask</span><span class="tag">Android Studio</span><span class="tag">Visio</span><span class="tag">NetBeans</span><span class="tag">LaTeX</span>
       </div>
     </div>
-
+ 
     <!-- Hobbies & Travel -->
     <div class="section" id="hobbies">
       <p class="section-title">Hobbies & Travel</p>
       <p class="travel-intro">I'm a genuine admirer of nature — mountains with their peaks brushing the clouds, winding rivers, cold mountain air, and wide open skies never fail to stop me in my tracks. Wherever I travel, I find myself chasing that same sense of vastness, whether it's in the mountains, the fields, or the sky.</p>
-
-<div class="hobby-card hobby-card-travel">
-  <div class="slider-wrap">
-    <div class="slider-track" id="travelSlider">
-      <div class="slide"><img src="img/travel-1.jpg" alt="Watching the sunset light up snow-capped peaks" loading="lazy"/><p class="slide-caption">Sunset over the peaks</p></div>
-      <div class="slide"><img src="img/travel-4.jpg" alt="Above the clouds on a misty mountain top" loading="lazy"/><p class="slide-caption">Above the clouds</p></div>
-      <div class="slide"><img src="img/travel-2.jpg" alt="A quiet wooden cabin in the valley" loading="lazy"/><p class="slide-caption">A quiet valley stop</p></div>
-      <div class="slide"><img src="img/travel-3.jpg" alt="On a bridge overlooking a mountain river" loading="lazy"/><p class="slide-caption">River crossing</p></div>
-    </div>
-    <button class="slider-btn prev" aria-label="Previous photo" onclick="const t=document.getElementById('travelSlider'); t.scrollBy({left:-t.clientWidth,behavior:'smooth'})">&#8249;</button>
-    <button class="slider-btn next" aria-label="Next photo" onclick="const t=document.getElementById('travelSlider'); t.scrollBy({left:t.clientWidth,behavior:'smooth'})">&#8250;</button>
-  </div>
-  <p class="hobby-title">Travelling</p>
-  <p class="hobby-desc">Chasing mountains, rivers, and wide open skies wherever I go.</p>
-</div>
+ 
+      <div class="slider-wrap">
+        <div class="slider-track" id="travelSlider">
+          <div class="slide">
+            <img src="img/travel/travel-1.jpg" alt="Watching the sunset light up snow-capped peaks" loading="lazy" />
+            <p class="slide-caption">Sunset over the peaks</p>
+          </div>
+          <div class="slide">
+            <img src="img/travel/travel-4.jpg" alt="Above the clouds on a misty mountain top" loading="lazy" />
+            <p class="slide-caption">Above the clouds</p>
+          </div>
+          <div class="slide">
+            <img src="img/travel/travel-2.jpg" alt="A quiet wooden cabin in the valley" loading="lazy" />
+            <p class="slide-caption">A quiet valley stop</p>
+          </div>
+          <div class="slide">
+            <img src="img/travel/travel-3.jpg" alt="On a bridge overlooking a mountain river" loading="lazy" />
+            <p class="slide-caption">River crossing</p>
+          </div>
+          <div class="slide">
+            <img src="img/travel/hobby-craft.jpg" alt="Admiring a school art exhibition by young students" loading="lazy" />
+            <p class="slide-caption">A school art exhibition</p>
+          </div>
+        </div>
+        <button class="slider-btn prev" aria-label="Previous photo" onclick="document.getElementById('travelSlider').scrollBy({left:-270,behavior:'smooth'})">&#8249;</button>
+        <button class="slider-btn next" aria-label="Next photo" onclick="document.getElementById('travelSlider').scrollBy({left:270,behavior:'smooth'})">&#8250;</button>
+      </div>
+ 
       <div class="hobby-grid">
         <div class="hobby-card">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l5.5-9 3.5 5 2-3.2L21 20H3z"/><circle cx="8" cy="7" r="1.3"/></svg>
@@ -825,7 +837,7 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- Contact -->
     <div class="section" id="contact">
       <p class="section-title">Contact</p>
@@ -835,13 +847,14 @@
         <a href="https://github.com/baloch838" target="_blank" style="color:var(--link); text-decoration:none;">github.com/baloch838</a>
       </p>
     </div>
-
+ 
   </main>
 </div>
-
+ 
 <footer>
   &copy; 2026 Safia Baloch &nbsp;·&nbsp; GIK Institute, Swabi, Pakistan
 </footer>
-
+ 
 </body>
 </html>
+ 
