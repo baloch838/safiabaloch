@@ -1,783 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no" />
-  <title>Safia Baloch</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    :root {
-      --white: #ffffff;
-      --bg: #f8f8f8;
-      --ink: #222222;
-      --muted: #666666;
-      --faint: #e8e8e8;
-      --accent: #4a7c6f;
-      --link: #4a7c6f;
-      --sans: 'Inter', -apple-system, sans-serif;
-    }
+<!--    <title>MeetMe - Resume Website Template</title>-->
 
-    html { scroll-behavior: smooth; }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome.min.css">
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/simple-line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Menu CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slide-style.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="../meet-me-opl/assets/css/main.css">
 
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      font-size: 15px;
-      line-height: 1.7;
-    }
+  </head>
+  <body>
 
-    /* Top nav */
-    .topnav {
-      background: var(--white);
-      border-bottom: 1px solid var(--faint);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .topnav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      height: 52px;
-      gap: 0;
-    }
-    .topnav-brand {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-      margin-right: 2.5rem;
-      white-space: nowrap;
-    }
-    .topnav-links {
-      list-style: none;
-      display: flex;
-      gap: 0;
-    }
-    .topnav-links a {
-      display: block;
-      padding: 0 1rem;
-      height: 52px;
-      line-height: 52px;
-      font-size: 14px;
-      font-weight: 400;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s, border-color 0.15s;
-      border-bottom: 2px solid transparent;
-    }
-    .topnav-links a:hover {
-      color: var(--ink);
-      border-bottom-color: var(--accent);
-    }
+    <!-- Header Area wrapper Starts -->
+    <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
 
-    /* Page layout */
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2.5rem 2rem;
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      position: sticky;
-      top: 72px;
-    }
-    .sidebar-photo {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 4px;
-      display: block;
-      margin-bottom: 1.2rem;
-      border: 1px solid var(--faint);
-    }
-    .sidebar-name {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.15rem;
-    }
-    .sidebar-title {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      line-height: 1.5;
-    }
-    .sidebar-meta {
-      list-style: none;
-      margin-bottom: 1.2rem;
-    }
-    .sidebar-meta li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-    .sidebar-meta .icon {
-      width: 15px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: var(--muted);
-    }
-    .sidebar-links {
-      list-style: none;
-    }
-    .sidebar-links li {
-      margin-bottom: 0.3rem;
-    }
-    .sidebar-links a {
-      font-size: 13px;
-      color: var(--link);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .sidebar-links a:hover { text-decoration: underline; }
-    .sidebar-links .icon {
-      width: 15px;
-      flex-shrink: 0;
-    }
-
-    /* Main content */
-    .main-content {}
-
-    /* Hero intro */
-    .intro {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--faint);
-    }
-    .intro h1 {
-      font-size: 1.9rem;
-      font-weight: 600;
-      line-height: 1.25;
-      color: var(--ink);
-      margin-bottom: 1rem;
-    }
-    .intro p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--ink);
-      margin-bottom: 0.8rem;
-    }
-    .intro a { color: var(--link); text-decoration: none; }
-    .intro a:hover { text-decoration: underline; }
-
-    /* Section */
-    .section {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--faint);
-    }
-    .section:last-child { border-bottom: none; }
-    .section-title {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-
-    /* Publications */
-    .pub-list { list-style: none; }
-    .pub-item {
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--faint);
-    }
-    .pub-item:last-child { border-bottom: none; margin-bottom: 0; }
-    .pub-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.2rem;
-      line-height: 1.5;
-    }
-    .pub-authors {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-    .pub-authors strong { color: var(--ink); }
-    .pub-venue {
-      font-size: 13px;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 0.35rem;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 500;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-right: 0.4rem;
-      letter-spacing: 0.03em;
-    }
-    .badge-conf { background: #ddeee9; color: #2d6b5c; }
-    .badge-arxiv { background: #fde8d0; color: #8b4a2f; }
-    .badge-prep { background: #eeeeee; color: #777; }
-    .pub-link {
-      font-size: 13px;
-      color: var(--link);
-      text-decoration: none;
-      margin-left: 0.3rem;
-    }
-    .pub-link:hover { text-decoration: underline; }
-
-    /* Experience */
-    .exp-list { list-style: none; }
-    .exp-item {
-      margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--faint);
-    }
-    .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
-    .exp-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-      margin-bottom: 0.15rem;
-    }
-    .exp-role { font-size: 15px; font-weight: 500; color: var(--ink); }
-    .exp-period { font-size: 12px; color: var(--muted); }
-    .exp-place { font-size: 13px; color: var(--accent); margin-bottom: 0.4rem; }
-    .exp-bullets { list-style: none; padding: 0; }
-    .exp-bullets li {
-      font-size: 13.5px;
-      color: var(--muted);
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.15rem;
-    }
-    .exp-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
-
-    /* Skills */
-    .skill-row { margin-bottom: 0.75rem; display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
-    .skill-cat { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; min-width: 90px; }
-    .tag {
-      font-size: 12px;
-      background: var(--white);
-      border: 1px solid var(--faint);
-      color: var(--ink);
-      padding: 2px 9px;
-      border-radius: 3px;
-    }
-
-    /* Education */
-    .edu-item { margin-bottom: 1rem; }
-    .edu-degree { font-size: 15px; font-weight: 500; color: var(--ink); }
-    .edu-school { font-size: 13px; color: var(--accent); }
-    .edu-detail { font-size: 13px; color: var(--muted); font-style: italic; }
-
-    /* Hobbies & Travel */
-    .travel-intro {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-      max-width: 620px;
-    }
-
-    /* Sliding photo gallery */
-    .slider-wrap {
-      position: relative;
-      margin-bottom: 2rem;
-    }
-    .slider-track {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding-bottom: 8px;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-    }
-    .slider-track::-webkit-scrollbar { height: 5px; }
-    .slider-track::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 3px; }
-    .slide {
-      position: relative;
-      flex: 0 0 auto;
-      width: 250px;
-      height: 310px;
-      scroll-snap-align: start;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid var(--faint);
-      background: var(--white);
-    }
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .slide-caption {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      padding: 0.5rem 0.6rem 0.4rem;
-      font-size: 11px;
-      font-weight: 500;
-      color: #fff;
-      background: linear-gradient(to top, rgba(0,0,0,0.62), rgba(0,0,0,0));
-    }
-    .slider-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--faint);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.15s, color 0.15s;
-      padding: 0;
-    }
-    .slider-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .slider-btn.prev { left: 8px; }
-    .slider-btn.next { right: 8px; }
-
-    /* Flexible hobbies grid */
-    .hobby-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-    }
-    .hobby-card {
-      background: var(--white);
-      border: 1px solid var(--faint);
-      border-radius: 6px;
-      padding: 1.1rem 1rem;
-      transition: border-color 0.15s;
-    }
-    .hobby-card:hover { border-color: var(--accent); }
-    .hobby-card svg {
-      width: 21px;
-      height: 21px;
-      color: var(--accent);
-      display: block;
-      margin-bottom: 0.65rem;
-    }
-    .hobby-title {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-    .hobby-desc {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 12px;
-      color: #aaa;
-      border-top: 1px solid var(--faint);
-      margin-top: 1rem;
-    }
-
-    /* Mobile */
-    @media (max-width: 700px) {
-      .page {
-        grid-template-columns: 1fr;
-        padding: 1.5rem 1rem;
-        gap: 2rem;
-      }
-      .sidebar {
-        position: static;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        align-items: flex-start;
-      }
-      .sidebar-photo { width: 110px; max-width: 110px; }
-      .topnav-links a { padding: 0 0.6rem; font-size: 13px; }
-      .topnav-brand { margin-right: 1rem; }
-      .slide { width: 190px; height: 240px; }
-    }
-  </style>
-</head>
-<body>
-
-<nav class="topnav">
-  <div class="topnav-inner">
-    <a href="#" class="topnav-brand">Safia Baloch</a>
-    <ul class="topnav-links">
-      <li><a href="#research">Research</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#awards">Awards</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="page">
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <img
-      class="sidebar-photo"
-      src="https://baloch838.github.io/safiabaloch/img/safia.jpeg"
-      alt="Safia Baloch"
-      onerror="this.style.display='none'"
-    />
-    <div>
-      <p class="sidebar-name">Safia Baloch</p>
-      <p class="sidebar-title">Lecturer & NLP Researcher<br/>Outstanding Instructor, 2025</p>
-      <ul class="sidebar-meta">
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          Swabi / Karachi, Pakistan
-        </li>
-        <li>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          GIK Institute, FAST NUCES
-        </li>
-      </ul>
-      <ul class="sidebar-links">
-        <li>
-          <a href="mailto:shahalsafia45@gmail.com">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-            Email
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/safia-baloch-1794a260/" target="_blank">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
-            LinkedIn
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/baloch838" target="_blank">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a href="https://scholar.google.com/citations?user=rFRE574AAAAJ&hl=en" target="_blank">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
-            Google Scholar
-          </a>
-        </li>
-        <li>
-          <a href="https://orcid.org/0009-0000-7587-0818" target="_blank">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="10"/><path d="M9 7h2m0 0v10m0-10h1a3 3 0 0 1 0 6H9"/></svg>
-            ORCID
-          </a>
-        </li>
-      </ul>
-    </div>
-  </aside>
-
-  <!-- Main -->
-  <main class="main-content">
-
-    <div class="intro">
-      <h1>Hello, I'm Safia.</h1>
-      <p>
-        I am a Lecturer at <a href="https://giki.edu.pk/personnel/safia-baloch/" target="_blank">GIK Institute of Engineering Sciences and Technology</a>, where I teach Data Science, Cloud Computing, Information Retrieval, and Big Data Analytics. I received my M.S. in Computer Science from <a href="https://www.nu.edu.pk" target="_blank">FAST NUCES Karachi</a>, where I also taught for over three years.
-      </p>
-      <p>
-        My research focuses on <strong>Natural Language Processing (NLP)</strong>, <strong>Large Language Models (LLMs)</strong>, and <strong>Agentic AI</strong>, with an interest in developing trustworthy, human-centered AI systems. I investigate how language models and intelligent agents understand, retrieve, and utilize knowledge in multilingual and real-world settings, including multilingual/low-resource NLP, retrieval-augmented generation (RAG), and information retrieval and knowledge grounding.
-      </p>
-      <p>
-        I was awarded <strong>Outstanding Instructor</strong> by the Data Science Department at GIKI in May 2025, and I served as an instructor at the ML to LLM Summer Bootcamp in the same year.
-      </p>
-    </div>
-
-    <!-- Publications -->
-    <div class="section" id="research">
-      <p class="section-title">Publications</p>
-      <ul class="pub-list">
-
-        <li class="pub-item">
-          <p class="pub-title">Towards Human-Centered Multi-Agent Systems: Integrating Cognition, Culture, Values and Cooperation in AI Agents</p>
-          <p class="pub-authors"><strong>Safia Baloch</strong>, Rahemeen Khan</p>
-          <p class="pub-venue">arXiv preprint · 2026</p>
-          <span class="badge badge-arxiv">arXiv</span>
-          <a class="pub-link" href="https://arxiv.org/pdf/2606.08274" target="_blank">[arXiv:2606.08274]</a>
-        </li>
-
-        <li class="pub-item">
-          <p class="pub-title">Governed by Agents: A Survey on the Role of Agentic AI in Future Computing Environments</p>
-          <p class="pub-authors">Nauman Ali Murad, <strong>Safia Baloch</strong></p>
-          <p class="pub-venue">arXiv preprint · 2025</p>
-          <span class="badge badge-arxiv">arXiv</span>
-          <a class="pub-link" href="https://arxiv.org/abs/2509.16676" target="_blank">[arXiv:2509.16676]</a>
-        </li>
-
-        <li class="pub-item">
-          <p class="pub-title">Forecasting the Stability of COVID-19 Vaccine Companies Stock Market using LSTM and Time-Series Models</p>
-          <p class="pub-authors">Rahemeen Khan, <strong>Safia Baloch</strong></p>
-          <p class="pub-venue">International Conference on Communication, Computing and Digital Systems (C-CODE / ICCDS) · 2023</p>
-          <span class="badge badge-conf">Conference</span>
-          <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10139884/" target="_blank">[IEEE]</a>
-        </li>
-
-        <li class="pub-item">
-          <p class="pub-title">UrduTokBench: A Multidomain Tokenization Benchmark for Urdu NLP</p>
-          <p class="pub-authors"><strong>Safia Baloch</strong> et al.</p>
-          <span class="badge badge-prep">In Preparation</span>
-        </li>
-
-        <li class="pub-item">
-          <p class="pub-title">From Labels to Latent Topics: Benchmarking Text Mining Approaches on AG News</p>
-          <p class="pub-authors"><strong>Safia Baloch</strong> et al.</p>
-          <span class="badge badge-prep">In Preparation</span>
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- Experience -->
-    <div class="section" id="experience">
-      <p class="section-title">Experience</p>
-      <ul class="exp-list">
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Lecturer</span>
-            <span class="exp-period">Oct 2024 – Present</span>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">
+                  About
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">
+                  Experience
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#publications">
+                  Publications
+                </a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#thesis">
+                  Ph.D. Thesis
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#hobbies">
+                  Hobbies
+                </a>
+              </li>
+            </ul>
           </div>
-          <p class="exp-place">GIK Institute of Engineering Sciences and Technology, Swabi</p>
-          <ul class="exp-bullets">
-            <li>Teaching Data Science, Cloud Computing, DevOps Lab, Information Retrieval, Big Data Analytics</li>
-            <li>Coordinator, Data Science Students Summer Internships & Curriculum Committee</li>
-            <li>Batch Advisor, DS Final Year Students</li>
-            <li>Supervising FYPs including Health Atlas (AI-driven prescription digitization & disease mapping)</li>
-            <li>Instructor, ML to LLM Summer Bootcamp (Jul–Aug 2025)</li>
-            <li>Outstanding Instructor Award, May 2025</li>
-          </ul>
-        </li>
 
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Lecturer</span>
-            <span class="exp-period">Jan 2021 – Sep 2024</span>
-          </div>
-          <p class="exp-place">FAST National University of Computer & Emerging Sciences, Karachi</p>
-          <ul class="exp-bullets">
-            <li>Taught Operating Systems, Discrete Structures, Data Structures, Parallel Distributed Computing</li>
-            <li>Faculty Head, ACM Chapter (2021–22) and ACM-Women Chapter (2022–23)</li>
-            <li>Supervised research on virtual therapy, ML-based TB detection, resume screening</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Instructor</span>
-            <span class="exp-period">Aug 2017 – Dec 2020</span>
-          </div>
-          <p class="exp-place">FAST NUCES, Karachi</p>
-          <ul class="exp-bullets">
-            <li>Labs for Programming Fundamentals, Data Structures, Operating Systems, ICT Tools</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">SQA Engineer</span>
-            <span class="exp-period">Oct 2016 – Jun 2017</span>
-          </div>
-          <p class="exp-place">Ovrlod Pvt Ltd, Karachi</p>
-          <ul class="exp-bullets">
-            <li>Software quality assurance for product releases</li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- Projects -->
-    <div class="section" id="projects">
-      <p class="section-title">Research & Project Supervision</p>
-      <ul class="exp-list">
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Health Atlas: AI-Driven Prescription Digitization & Disease Mapping</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>OCR-based digitization of handwritten prescriptions with disease-distribution mapping for public health monitoring</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">IntelliDentX: Automated Dental Lesion Detection and Root Canal Evaluation</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>YOLOv11-based computer vision system for detecting dental lesions and evaluating root canal filling quality</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Stocks in Sight: Stock Market Forecasting Using Time Series Analysis</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>PSX time-series forecasting for market behavior analysis and price prediction</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Tuberculosis Classification Using Machine Learning</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Multiclass TB classification framework using the ImageCLEF Tuberculosis dataset</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Virtual Therapy for Acrophobia and Claustrophobia</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Unity-based VR exposure-therapy application for fear of heights and confined spaces</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Automatic Resume Screening and Ranking System</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>ML-based system to extract resume features and rank candidates against job requirements</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Lossless Compression of Vector Databases <span style="font-weight:400; color:var(--muted); font-size:12px;">(CS412 Course Project)</span></span>
-          </div>
-          <ul class="exp-bullets">
-            <li>ANNS, IVF-based retrieval, Product Quantization, and Bolt compression for vector databases</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">Improved Rational Retrieval Acts for Sparse Retrieval Models <span style="font-weight:400; color:var(--muted); font-size:12px;">(Course Project)</span></span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Context-aware retrieval and RSA-based enhancements for sparse retrieval models</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <div class="exp-header">
-            <span class="exp-role">GraphReddit: Social Network Analysis and Community Detection on Reddit <span style="font-weight:400; color:var(--muted); font-size:12px;">(Course Project)</span></span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Neo4j-based interaction networks with PageRank, community detection, and sentiment diffusion analysis</li>
-          </ul>
-        </li>
-
-      </ul>
-    </div>
-
-    <!-- Education -->
-    <div class="section" id="education">
-      <p class="section-title">Education</p>
-
-      <div class="edu-item">
-        <p class="edu-degree">M.S. Computer Science &nbsp;·&nbsp; <span style="font-weight:400">GPA 3.13/4.0</span></p>
-        <p class="edu-school">FAST NUCES, Karachi &nbsp;·&nbsp; 2017–2020</p>
-        <p class="edu-detail">Thesis: Automatic Grading of Short Answers using Text Similarity Techniques</p>
-      </div>
-
-      <div class="edu-item">
-        <p class="edu-degree">B.S. Computer Science</p>
-        <p class="edu-school">FAST NUCES, Karachi &nbsp;·&nbsp; 2012–2016</p>
-        <p class="edu-detail">Sindh Endowment Scholarship · FYP: HuMa — Platform for Human-Machine Computations</p>
-      </div>
-    </div>
-
-    <!-- Awards & Academic Service -->
-    <div class="section" id="awards">
-      <p class="section-title">Awards, Honors & Academic Service</p>
-
-      <div class="edu-item">
-        <p class="edu-degree">Awards & Honors</p>
-        <ul class="exp-bullets" style="margin-top:0.5rem;">
-          <li>Outstanding Instructor Award, Data Science Department, GIKI — May 2025</li>
-          <li>Member, Pakistan Youth Parliament — Nov 2025 – Present</li>
-          <li>ML to LLM Summer Bootcamp Instructor, GIKI — Jul–Aug 2025</li>
-          <li>MS Scholarship, FAST NUCES Karachi — Aug 2017 – Jul 2020</li>
-          <li>1st Prize, Inter-Board College Debate Competition, Karachi — Apr 2009</li>
-          <li>Best Performance Award, Secondary School — May 2007</li>
+        <!-- Mobile Menu Start -->
+        <ul class="onepage-nev mobile-menu">
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#experience">Experience</a>
+          </li>
+          <li>
+            <a href="#publications">Publications</a>
+          </li>
+          <li>
+            <a href="#thesis">Ph.D. Thesis</a>
+          </li>
+          <li>
+            <a href="#hobbies">Hobbies</a>
+          </li>
         </ul>
-      </div>
+        <!-- Mobile Menu End -->
+        </div>
 
-      <div class="edu-item" style="margin-top:1.5rem;">
-        <p class="edu-degree">Academic Service & Leadership</p>
-        <ul class="exp-bullets" style="margin-top:0.5rem;">
-          <li>Academic Reviewer: ICETST 2024, ICIT 2024</li>
-          <li>Team Member, ICPC Asia-Topi — Jan 2025 – Present</li>
-          <li>Faculty Head, Literature Club Society, FAST NUCES Karachi — Jul–Sep 2024</li>
-          <li>Faculty Head, ACM-Women Chapter, FAST NUCES Karachi — Aug 2022 – Jun 2023</li>
-          <li>Faculty Head, ACM Chapter, FAST NUCES Karachi — Aug 2021 – Jun 2022</li>
-          <li>Faculty Co-Head, Sportics Society, FAST NUCES Karachi — Aug 2020 – Jun 2021</li>
-          <li>Head, Procom Flagship Event Creative Competitions, FAST NUCES — Apr 2019</li>
-          <li>Judge, Procom Creative Competition (Sketching), FAST NUCES — Apr 2018</li>
-        </ul>
+      </nav>
+      <!-- Navbar End -->
+
+
+      <!-- Hero Area Start -->
+      <div id="hero-area" class="hero-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+              <div class="contents">
+                <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Hi, I'm</h5>
+                <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Safia Baloch</h2>
+                <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Algorithms applied behind beautiful nature is what inspires me. Welcome to a nature lover's profile</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Area End -->
+
+    </header>
+    <!-- Header Area wrapper End -->
+
+<!--     About Section Start-->
+    <section id="about" class="section-padding">
+      <h2 class="section-title wow flipInX" data-wow-delay="0.4s">About me</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+              <img class="img-fluid rounded-circle mb-2 border border-light" src="assets/img/about/profile_pic.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+              <p>
+                I am Lecturer at <a href="https://www.scu.edu/engineering/academic-programs/department-of-computer-engineering/" style="color: #50c04c;">SCU</a>.
+                <br>
+                CS Postdoctoral researcher at <a href="https://cse.engin.umich.edu/" style="color: #50c04c;">UMich</a>, <a href="https://lit.eecs.umich.edu/" style="color: #50c04c;">LIT Lab</a>,
+                advised by <a href="https://web.eecs.umich.edu/~mihalcea/" style="color: #50c04c;">Rada Mihalcea</a>.
+                <br>
+                My research is at the intersection of <b>Natural Language Processing</b> & <b>Computer Vision</b>.<br>
+                Current focus on <b>AI for social good</b>, building models for diverse geographical and socioeconomic backgrounds.<br>
+                For my <a href="vlogs.html"style="color: #50c04c;">thesis</a>, I worked with social media videos such as <a href="https://www.youtube.com/watch?v=0yGzWZ1yDjo&t=20s" style="color: #50c04c;">YouTube vlogs</a>, to develop Datasets & Models for <b>Human Action Understanding</b>.
+              </p>
+
+              <div class="about-profile">
+                <ul class="admin-profile">
+                  <li><span class="pro-title"> Current Work: </span> <span class="pro-detail">Postdoctoral researcher, University of Michigan</span></li>
+                  <li><span class="pro-title"> Education: </span> <span class="pro-detail">PhD Computer Science, University of Michigan</span></li>
+                  <li><span class="pro-title"> Graduation Date: </span> <span class="pro-detail">August, 2022</span></li>
+                  <li><span class="pro-title"> Location: </span> <span class="pro-detail">Ann Arbor, MI, USA</span></li>
+                  <li><span class="pro-title"> Contact: </span> <span class="pro-detail">oignat@umich.edu</span></li>
+                </ul>
+              </div>
+
+              <ul class="social-icon wow fadeInUp" data-wow-delay="0.8s">
+                <li>
+                  <a class="google" href="https://github.com/baloch838"><i class="icon-social-github"></i></a>
+                </li>
+                <li>
+                  <a class="google" href="https://scholar.google.com/citations?user=rFRE574AAAAJ&hl=en"><i class="icon-social-google"></i></a>
+                </li>
+                <li>
+                  <a class="twitter" href="https://twitter.com/OanaIgnatRo"><i class="icon-social-twitter"></i></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="https://www.linkedin.com/in/safia-baloch-1794a260/"><i class="icon-social-linkedin"></i></a>
+                </li>
+              </ul>
+              <a href="https://docs.google.com/document/d/1gruWaBBi4hCJdRORvyk9jRVleDF4uEtd/edit" class="btn btn-common"><i class="icon-paper-clip"></i> Download Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Resume Section Start -->
+    <div id="experience" class="section-padding">
+      <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Work Experience</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+              <ul class="timeline">
+                <li>
+                  <i class="icon-graduation"></i>
+                  <h2 class="timelin-title">Academia</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Postdoctoral researcher - University of Michigan</h3>
+                    <span>2023 - Present</span>
+                    <p class="line-text">Mentor for Master and Ph.D. students, Co-PI <a href="https://globalhealthequity.umich.edu/impact-accelerator-grants" style="color: #50c04c;">Global Health Equity Grant</a>, co-organizer of  <a href="https://mentorship.aclweb.org/ACL" style="color: #50c04c;">ACL Year Round Mentorship</a> and many other events and workshops centered on improving diversity in CS.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Graduate Research Assistant - University of Michigan</h3>
+                    <span>2017 - 2022</span>
+                    <p class="line-text">Volunteer for <a href="https://ai-4-all.org/" style="color: #50c04c;">AI4ALL</a>, I introduced high school students to AI by teaching them how to implement and present an NLP project related to social good.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Primary Instructor - University of Michigan</h3>
+                    <span>Fall 2021</span>
+                    <p class="line-text">Primary Instructor for <a href="https://girlsencoded.eecs.umich.edu/discoverCS/ " style="color: #50c04c;">Dicover CS (EECS 198)</a>, a class primarily designed for underrepresented minorities in CS</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Engineering Teaching Consultant - University of Michigan</h3>
+                    <span>2020 - 2021</span>
+                    <p class="line-text">As a <a href="https://crlte.engin.umich.edu/etc/" style="color: #50c04c;">Teaching Consultant</a>, I helped other GSIs/IAs to improve their teaching through one on-one consultations where we discuss challenges they face during teaching, collected feedback from students of the GSIs/IAs and discussed it with the student instructor.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Graduate Student Instructor - University of Michigan</h3>
+                    <span>2019 - 2020</span>
+                    <p class="line-text">EECS 281: Data Structures and Algorithms and EECS 476: Data Mining</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+              <ul class="timeline">
+                <li>
+                  <i class="icon-briefcase"></i>
+                  <h2 class="timelin-title">Industry</h2>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Research Intern - Amazon Prime Video</h3>
+                    <span>September 2022 - December 2022</span>
+                    <p class="line-text">Mentored by <a href="https://www.linkedin.com/in/yijingru/" style="color: #50c04c;">Jingru Yi</a> and <a href="https://uzkent.github.io/" style="color: #50c04c">Burak Uzkent</a>, I implemented and presented research on image-phrase grounding using contrastive learning and image augmentation.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Research Intern - Facebook FAIR</h3>
+                    <span>May 2021 - August 2021</span>
+                    <p class="line-text">Mentored by <a href="https://guzmanhe.github.io/" style="color: #50c04c;">Paco Guzman</a>, Vishrav Chaudhary and <a href="http://www.maillard.it/" style="color: #50c04c">Jean Maillard</a>, I implemented and presented research on <a href="https://arxiv.org/pdf/2202.13274.pdf" style="color: #50c04c;">OCR impact in Machine Translation for low resource languages</a>.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Research Intern - Facebook FAIAR</h3>
+                    <span>May 2020 - August 2020</span>
+                    <p class="line-text">Mentored by <a href="https://homes.cs.washington.edu/~alon/" style="color: #50c04c;">Alon Halevy</a>, Jane Yu and <a href="https://y-lanb.org/" style="color: #50c04c">Y-Lan Boureau</a>, I implemented and presented research on <a href="https://arxiv.org/abs/2109.02734" style="color: #50c04c">Identifying and Analyzing Inspiration in social media data</a>.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Image Processing Developer - Telenav</h3>
+                    <span>August 2016 - August 2017</span>
+                    <p class="line-text">Research and implement efficient methods for road detection using raw images from mobile phones.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="content-text">
+                    <h3 class="line-title">Image Processing Intern - Robert Bosch</h3>
+                    <span>July 2015 - August 2016</span>
+                    <p class="line-text">My <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7737150" style="color: #50c04c;">undergraduate thesis</a>  was done as part of the internship and was about implementing a real-time road recognition algorithm having as input a disparity (depth) image taken from a stereo camera.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Resume Section End -->
 
-    <!-- Skills -->
-    <div class="section" id="skills">
-      <p class="section-title">Technical Skills</p>
-      <div class="skill-row">
-        <span class="skill-cat">Languages</span>
-        <span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">Shell</span>
+    <!-- Portfolio Section -->
+    <section id="publications" class="section-padding">
+      <!-- Container Starts -->
+      <div class="container">        
+        <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Publications (Paper, Poster & Code)</h2>
+        <div class="row">
+          <!-- Portfolio Recent Projects -->
+
+          <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
+            <!--            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">-->
+            <div class="col-sm-6 mix design print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/clip_svo.png" alt="" style="object-fit: scale-down; height: 250px; " ;/>
+                  <h6 class="line-title" style="text-align:center;margin-top:20px;color: #50c04c">Scalable Performance Analysis for Vision-Language Models</h6>
+                  <p class="line-text" align="center">
+                    &nbsp Santiago Castro*, <b>Oana Ignat</b>*, Rada Mihalcea<br>
+                    &nbsp 12th Joint Conference on Lexical and Computational Semantics <b>(*SEM 2023)</b></p>
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="https://arxiv.org/pdf/2305.18786.pdf">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/Scalable-VLM-Probing">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="assets/img/gallery/paper_poster/StarSem.23.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 mix development print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/fill_in_the_blanks.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">Fill-in-the-Blank: A Challenging Video Understanding Evaluation Framework</h6>
+                  <p class="line-text" align="center">
+
+                    &nbsp Santiago Castro*, Ruoyao Wang, Pingxuan Huang, Ian Stewart, <b>Oana Ignat</b>, Nan Liu, Jonathan C. Stroud, Rada Mihalcea<br>
+                    &nbsp Annual Meeting of the Association for Computational Linguistics <b>(ACL 2022)</b></p>
+
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="https://arxiv.org/pdf/2104.04182.pdf">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/video-fill-in-the-blank">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="https://lit.eecs.umich.edu/posters/ACL.2022.FIBER.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix development print"  style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/ocr.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">OCR Improves Machine Translation for Low-Resource Languages</h6>
+                  <p class="line-text" align="center">
+                    &nbsp<b>Oana Ignat</b>*, Jean Maillard, Vishrav Chaudhary, Francisco Guzmán<br>
+                    &nbsp Annual Meeting of the Association for Computational Linguistics <b>(Findings ACL 2022)</b></p>
+
+                  <div class="overlay">
+                    <div class="icons">
+                      <a class="lightbox preview" href="https://arxiv.org/pdf/2202.13274.pdf">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/facebookresearch/flores/tree/main/ocr">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="assets/img/gallery/paper_poster/ACL.OCR.2022.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix design print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/action_localization.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">When did it happen? Duration-informed Temporal Localization of Narrated Actions in Vlogs</h6>
+                  <p class="line-text" align="center">
+                    &nbsp<b>Oana Ignat</b>*, Santiago Castro, Yuhang Zhou, Jiajun Bao, Dandan Shan, Rada Mihalcea<br>
+                    &nbsp ACM Transactions on Multimedia Computing, Communications, Applications <b>(TOMM 2022)</b></p>
+
+                  <div class="overlay">
+                    <div class="icons">
+                      <!--                      <a class="lightbox preview" href="assets/img/gallery/AISymposium2020.png">-->
+                      <a class="lightbox preview" href="https://arxiv.org/abs/2202.08138">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/vlog_action_localization">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="assets/img/gallery/paper_poster/TOMM.2022.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix development print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/action_reason.png" alt="" style="object-fit: scale-down; height: 250px; " />
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">WhyAct: Identifying Action Reasons in Lifestyle Vlogs</h6>
+                  <p class="line-text" align="center">
+                    &nbsp<b>Oana Ignat</b>*, Santiago Castro, Hanwen Miao, Weiji Li, Rada Mihalcea<br>
+                    &nbsp The 2021 Conference on Empirical Methods in Natural Language Processing <b>(EMNLP 2021)</b></p>
+
+                  <div class="overlay">
+                    <div class="icons">
+<!--                      <a class="lightbox preview" href="assets/img/gallery/EMNLP.ActionReasonsVlogs.2021.png">-->
+                      <a class="lightbox preview" href="https://arxiv.org/abs/2109.02747">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/vlog_action_reason">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="https://lit.eecs.umich.edu/posters/EMNLP.ActionReasonsVlogs.2021.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix development print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/inspiration.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">Detecting Inspiring Content on Social Media</h6>
+                  <p class="line-text" align="center">
+                    &nbsp<b>Oana Ignat</b>*, Y-Lan Boureau, Jane A. Yu, Alon Halevy<br>
+                    &nbsp 9th International Conference on Affective Computing & Intelligent Interaction <b>(ACII 2021)</b></p>
+                  <div class="overlay">
+                    <div class="icons">
+<!--                      <a class="lightbox preview" href="assets/img/gallery/ACII2021.jpg">-->
+                      <a class="lightbox preview" href="https://arxiv.org/abs/2109.02734">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/Reddit-Detect-Inspiration">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="https://lit.eecs.umich.edu/posters/ACII.2021.Inspiration.poster.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix development print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/vlog.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c" >Identifying Visible
+                    actions in Lifestyle Vlogs</h6>
+                  <p class="line-text" align="center">
+                  &nbsp<b>Oana Ignat</b>*, Laura Burdick, Jia Deng, Rada Mihalcea<br>
+                  &nbsp Annual Meeting of the Association for Computational Linguistics <b>(ACL 2019)</b></p>
+
+                  <div class="overlay">
+                    <div class="icons">
+<!--                      <a class="lightbox preview" href="assets/img/gallery/ACL.2019.Italy.png">-->
+                      <a class="lightbox preview" href="https://arxiv.org/abs/1906.04236">
+                        <i class="icon-book-open"></i>
+                      </a>
+                      <a class="link" href="https://github.com/MichiganNLP/vlog_action_recognition">
+                        <i class="icon-social-github"></i>
+                      </a>
+                      <a class="link2" href="https://lit.eecs.umich.edu/posters/EEML.2019.ActionVlogs.poster.pdf">
+                        <i class="icon-eye"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+
+            <div class="col-sm-6 mix design print" style="margin-top:50px;">
+              <div class="portfolio-item">
+                <div class="shot-item">
+                  <img src="assets/img/gallery/paper_overview/disparity.png" alt="" style="object-fit: scale-down; height: 250px; "/>
+                  <h6 class="line-title" style="text-align:center;margin-top:5px;color: #50c04c">Disparity image segmentation for free-space detection</h6>
+                  <p class="line-text" align="center" >
+                    &nbsp<b>Oana Ignat</b>*, Cosmin Lazar<br>
+                    &nbsp IEEE International Conference on Intelligent Computer Communication and Processing <b>(ICCP 2016)</b>
+                  </p>
+
+                  <div class="overlay">
+                    <div class="icons">
+<!--                      <a class="lightbox preview" href="assets/img/gallery/disparity2.png">-->
+                      <a class="lightbox preview" href="https://ieeexplore.ieee.org/document/7737150">
+                        <i class="icon-book-open"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+            </div>
+
+        </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">ML / AI</span>
-        <span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">LangChain</span><span class="tag">AutoGen</span><span class="tag">scikit-learn</span>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Cloud & Data</span>
-        <span class="tag">AWS (EC2/S3/IAM)</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Spark</span><span class="tag">Hadoop</span><span class="tag">BigQuery</span><span class="tag">Grafana</span><span class="tag">Prometheus</span><span class="tag">Jenkins</span><span class="tag">Terraform</span>
+      <!-- Container Ends -->
+    </section>
+    <!-- Portfolio Section Ends -->
+
+    <!-- Portfolio Section -->
+    <section id="thesis" class="section-padding">
+      <!-- Container Starts -->
+      <div class="container">
+        <h2 class="section-title wow flipInX" data-wow-delay="0.3s">Ph.D. Thesis</h2>
+          <!-- Portfolio Recent Projects -->
+              <div class="row wow fadeInDown" data-wow-delay="0.5s" style="margin-top:10px;">
+                  <h6 class="line-title" style="text-align:center">
+                    <a style="color: #50c04c" href="vlogs.html">Here</a> you find my thesis, <b>Towards Human Action Understanding in Social Media Videos using Multimodal Models</b>, together with all resources (Datasets & ML models).
+                  </h6>
+              </div>
       </div>
-      <div class="skill-row">
-        <span class="skill-cat">Other</span>
-        <span class="tag">Power BI</span><span class="tag">Weka</span><span class="tag">Neo4j</span><span class="tag">Flask</span><span class="tag">Android Studio</span><span class="tag">Visio</span><span class="tag">NetBeans</span><span class="tag">LaTeX</span>
       </div>
-    </div>
+      <!-- Container Ends -->
+    </section>
+
     <!-- Contact Section Start -->
           <section id="hobbies" class="services section-padding">
 
@@ -785,19 +519,19 @@
             <div class="container">
             <div class="container_gallery">
               <div class="box">
-                <img src="img/travel-2.jpg">
+                <img src="assets/img/gallery/hobbies/horse_riding1.jpg">
                 <span>Nature</span>
               </div>
               <div class="box">
-                <img src="img/travel-3.jpg"">
+                <img src="assets/img/gallery/hobbies/hike2.jpg">
                 <span>Hiking</span>
               </div>
               <div class="box">
-                <img src="img/travel-1.jpg">
+                <img src="assets/img/gallery/hobbies/painting2.jpg">
                 <span>Wandering</span>
               </div>
               <div class="box">
-                <img src="img/hobby-craft.jpg">
+                <img src="assets/img/gallery/hobbies/ballet.jpg">
                 <span>Reading</span>
               </div>
               </div>
@@ -805,78 +539,34 @@
           </section>
     <!-- Contact Section End -->
 
-    <!-- Hobbies & Travel -->
-    <div class="section" id="hobbies">
-      <p class="section-title">Hobbies & Travel</p>
-      <p class="travel-intro">I'm a genuine admirer of nature — mountains with their peaks brushing the clouds, winding rivers, cold mountain air, and wide open skies never fail to stop me in my tracks. Wherever I travel, I find myself chasing that same sense of vastness, whether it's in the mountains, the fields, or the sky.</p>
-
-      <div class="slider-wrap">
-        <div class="slider-track" id="travelSlider">
-          <div class="slide">
-            <img src="img/travel-1.jpg" alt="Watching the sunset light up snow-capped peaks" loading="lazy" />
-            <p class="slide-caption">Sunset over the peaks</p>
+    <!-- Footer Section Start -->
+    <footer class="footer-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+              <ul class="social-icon">
+                <li>
+                  <a class="google" href="https://github.com/baloch838"><i class="icon-social-github"></i></a>
+                </li>
+                <li>
+                  <a class="google" href="https://scholar.google.com/citations?user=rFRE574AAAAJ&hl=en"><i class="icon-social-google"></i></a>
+                </li>
+                <li>
+                  <a class="linkedin" href="https://www.linkedin.com/in/safia-baloch-1794a260/"><i class="icon-social-linkedin"></i></a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="slide">
-            <img src="img/travel-4.jpg" alt="Above the clouds on a misty mountain top" loading="lazy" />
-            <p class="slide-caption">Above the clouds</p>
-          </div>
-          <div class="slide">
-            <img src="img/travel-2.jpg" alt="A quiet wooden cabin in the valley" loading="lazy" />
-            <p class="slide-caption">A quiet valley stop</p>
-          </div>
-          <div class="slide">
-            <img src="img/travel-3.jpg" alt="On a bridge overlooking a mountain river" loading="lazy" />
-            <p class="slide-caption">River crossing</p>
-          </div>
-          <div class="slide">
-            <img src="img/hobby-craft.jpg" alt="Admiring a school art exhibition by young students" loading="lazy" />
-            <p class="slide-caption">A school art exhibition</p>
-          </div>
-        </div>
-        <button class="slider-btn prev" aria-label="Previous photo" onclick="document.getElementById('travelSlider').scrollBy({left:-270,behavior:'smooth'})">&#8249;</button>
-        <button class="slider-btn next" aria-label="Next photo" onclick="document.getElementById('travelSlider').scrollBy({left:270,behavior:'smooth'})">&#8250;</button>
-      </div>
-
-      <div class="hobby-grid">
-        <div class="hobby-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l5.5-9 3.5 5 2-3.2L21 20H3z"/><circle cx="8" cy="7" r="1.3"/></svg>
-          <p class="hobby-title">Travelling</p>
-          <p class="hobby-desc">Chasing mountains, rivers, and wide open skies wherever I go.</p>
-        </div>
-        <div class="hobby-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 5-5 2 2-5 5-2z"/></svg>
-          <p class="hobby-title">Visits</p>
-          <p class="hobby-desc">Exploring new cities, cultures, and places whenever I get the chance.</p>
-        </div>
-        <div class="hobby-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.3-5-1.5-8-1v13c3-.5 6-.3 8 1 2-1.3 5-1.5 8-1V5c-3-.5-6-.3-8 1z"/><path d="M12 6v13"/></svg>
-          <p class="hobby-title">Reading</p>
-          <p class="hobby-desc">Always a book in progress — fiction or otherwise.</p>
-        </div>
-        <div class="hobby-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 000 18c1.5 0 2-1 2-2s-.5-1.5-.5-2 .5-1 1.5-1h2A4.5 4.5 0 0021 11.5 8.5 8.5 0 0012 3z"/><circle cx="7.5" cy="11.5" r="1"/><circle cx="9.5" cy="7.5" r="1"/><circle cx="14.5" cy="7" r="1"/><circle cx="17" cy="10.5" r="1"/></svg>
-          <p class="hobby-title">Encouraging Young Creativity</p>
-          <p class="hobby-desc">Appreciating creative arts, especially work by school kids, and inspiring young creativity.</p>
         </div>
       </div>
-    </div>
+    </footer>
+    <!-- Footer Section End -->
 
-    <!-- Contact -->
-    <div class="section" id="contact">
-      <p class="section-title">Contact</p>
-      <p style="font-size:14px; color: var(--muted); line-height: 2;">
-        <a href="mailto:shahalsafia45@gmail.com" style="color:var(--link); text-decoration:none;">shahalsafia45@gmail.com</a><br/>
-        <a href="https://www.linkedin.com/in/safia-baloch-1794a260/" target="_blank" style="color:var(--link); text-decoration:none;">linkedin.com/in/safia-baloch-1794a260</a><br/>
-        <a href="https://github.com/baloch838" target="_blank" style="color:var(--link); text-decoration:none;">github.com/baloch838</a>
-      </p>
-    </div>
-
-  </main>
-</div>
-
-<footer>
-  &copy; 2026 Safia Baloch &nbsp;·&nbsp; GIK Institute, Swabi, Pakistan
-</footer>
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="icon-arrow-up"></i>
+    </a>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="assets/js/jquery-min.js"></script>
@@ -894,6 +584,6 @@
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
     <script src="assets/js/map.js"></script>
-
-</body>
+      
+  </body>
 </html>
