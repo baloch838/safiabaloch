@@ -295,24 +295,147 @@
 <!-- Project Galery -->
 
 <!-- Project Gallery -->
+<style>
+  #project-gallery { padding: 80px 0; }
+  #project-gallery .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 26px;
+    max-width: 1140px;
+    margin: 40px auto 0;
+    padding: 0 15px;
+  }
+  #project-gallery .project-card {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    overflow: hidden;
+    background: linear-gradient(150deg, var(--card-accent, #50c04c), #17181c 115%);
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  }
+  #project-gallery .project-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #project-gallery .project-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.4) 60%, rgba(0,0,0,0) 100%);
+  }
+  #project-gallery .project-title {
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    margin: 0 0 12px;
+  }
+  #project-gallery .project-code-link {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.55);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: .78rem;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease;
+  }
+  #project-gallery .project-code-link:hover {
+    background: rgba(255,255,255,.18);
+    border-color: rgba(255,255,255,.9);
+  }
+</style>
 <div class="section" id="project-gallery">
   <p class="section-title">Project Gallery</p>
   <div class="project-grid">
 
-    <!-- COPY THIS CARD FOR EACH PROJECT -->
-    <div class="project-card">
-      <img class="project-thumb" src="img/health-atlas.png" alt="Health Atlas model overview" loading="lazy" />
-      <div class="project-body">
-        <p class="project-title">Health Atlas: AI-Driven Prescription Digitization</p>
-        <p class="project-desc">OCR-based digitization of handwritten prescriptions with disease-distribution mapping.</p>
-        <div class="project-links">
-          <a href="https://arxiv.org/..." target="_blank">Paper</a>
-          <a href="https://github.com/..." target="_blank">Code</a>
-          <a href="img/health-atlas-poster.pdf" target="_blank">Poster</a>
-        </div>
+    <div class="project-card" style="--card-accent:#2f9e44;">
+      <img class="project-thumb" src="img/health-atlas.png" alt="Health Atlas project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Health Atlas: AI-Driven Prescription Digitization &amp; Disease Mapping</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
       </div>
     </div>
-    <!-- END CARD -->
+
+    <div class="project-card" style="--card-accent:#0e8a8a;">
+      <img class="project-thumb" src="img/intellidentx.png" alt="IntelliDentX project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">IntelliDentX: Dental Lesion Detection &amp; Root Canal Evaluation</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#c98a2c;">
+      <img class="project-thumb" src="img/stocks-in-sight.png" alt="Stocks in Sight project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Stocks in Sight: Stock Market Forecasting Using Time Series Analysis</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#6a4fb3;">
+      <img class="project-thumb" src="img/vector-db-compression.png" alt="Vector database compression project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Lossless Compression of Vector Databases</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#d9622b;">
+      <img class="project-thumb" src="img/graphreddit.png" alt="GraphReddit project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">GraphReddit: Social Network Analysis &amp; Community Detection on Reddit</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#2e6fd9;">
+      <img class="project-thumb" src="img/quizbolt.png" alt="QuizBolt project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">QuizBolt: Scalable AI-Powered Learning Platform on AWS</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#5347c9;">
+      <img class="project-thumb" src="img/rsa-retrieval.png" alt="Rational Retrieval Acts project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Improved Rational Retrieval Acts for Sparse Retrieval Models</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#b3403f;">
+      <img class="project-thumb" src="img/tb-classification.png" alt="Tuberculosis classification project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Tuberculosis Classification Using Machine Learning</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#2c6e63;">
+      <img class="project-thumb" src="img/virtual-therapy.png" alt="Virtual therapy project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Virtual Therapy for Acrophobia &amp; Claustrophobia</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--card-accent:#4a5568;">
+      <img class="project-thumb" src="img/resume-screening.png" alt="Resume screening system project" loading="lazy" onerror="this.style.display='none';" />
+      <div class="project-overlay">
+        <p class="project-title">Automatic Resume Screening &amp; Ranking System</p>
+        <a class="project-code-link" href="https://github.com/..." target="_blank" rel="noopener"><i class="icon-social-github"></i> Code</a>
+      </div>
+    </div>
 
   </div>
 </div>
